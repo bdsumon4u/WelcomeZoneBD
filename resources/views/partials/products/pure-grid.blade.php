@@ -2,6 +2,7 @@
     <div class="container">
         @if($title ?? null)
             <div class="block-header">
+                <div class="block-header__divider"></div>
                 <h3 class="block-header__title">
                     @isset($section)
                         <a href="{{ route('home-sections.products', $section) }}" style="color:inherit;">{{ $title }}</a>
@@ -10,11 +11,11 @@
                     @endisset
                 </h3>
                 <div class="block-header__divider"></div>
-                @isset($section)
-                    <a href="{{ route('products.index', ['section' => $section->id]) }}" class="btn btn-sm ml-0 block-header__arrows-list">
-                        View All
-                    </a>
-                @endisset
+{{--                @isset($section)--}}
+{{--                    <a href="{{ route('products.index', ['section' => $section->id]) }}" class="btn btn-sm ml-0 block-header__arrows-list">--}}
+{{--                        View All--}}
+{{--                    </a>--}}
+{{--                @endisset--}}
             </div>
         @endif
         <div class="products-view__list products-list" data-layout="grid-{{ $cols ?? 5 }}-full" data-with-features="false">
@@ -38,7 +39,7 @@
                             </div>
                             <div class="product-card__info">
                                 <div class="product-card__name">
-                                    <a href="{{ route('products.show', $product) }}">{{ $product->name }}</a>
+                                    <a title="{{ $product->name }}" href="{{ route('products.show', $product) }}">{{ $product->name }}</a>
                                 </div>
                             </div>
                             <div class="product-card__actions">
@@ -59,8 +60,8 @@
                                 </div>
                                 <div class="product-card__buttons">
                                     @exp($available = !$product->should_track || $product->stock_count > 0)
-                                    <button class="btn btn-primary product-card__addtocart" type="button" {{ $available ? '' : 'disabled' }}>Add To Cart</button>
-                                    <button class="btn btn-primary product-card__ordernow" type="button" {{ $available ? '' : 'disabled' }}>Order Now</button>
+                                    <button class="btn btn-danger product-card__addtocart" type="button" {{ $available ? '' : 'disabled' }}>Add To Cart</button>
+                                    <button class="btn btn-success product-card__ordernow" type="button" {{ $available ? '' : 'disabled' }}>Order Now</button>
                                 </div>
                             </div>
                         </div>

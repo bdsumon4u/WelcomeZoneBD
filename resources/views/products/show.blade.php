@@ -4,19 +4,11 @@
     <link rel="stylesheet" href="{{ asset('strokya/vendor/xzoom/xzoom.css') }}">
     <link rel="stylesheet" href="{{ asset('strokya/vendor/xZoom-master/example/css/demo.css') }}">
     <style>
-        #accordion .card-link {
-            display: block;
-            font-size: 20px;
-            padding: 18px 48px;
-            border-bottom: 2px solid transparent;
-            color: inherit;
-            font-weight: 500;
-            border-radius: 3px 3px 0 0;
-            transition: all .15s;
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            border-top: 2px solid #1870e0;
         }
-        #accordion .card-link:not(.collapsed) {
-            border-bottom: 2px solid #000;
-            color: #000;
+        .block-features__list.flex-column.d-block {
+            border-top: 5px solid #1870e0;
         }
 
         @media (max-width: 768px) {
@@ -79,8 +71,8 @@
                             @if($product->selling_price == $product->price)
                                 {!!  theMoney($product->price)  !!}
                             @else
-                                <span class="product-card__new-price">{!!  theMoney($product->selling_price)  !!}</span>
                                 <span class="product-card__old-price">{!!  theMoney($product->price)  !!}</span>
+                                <span class="product-card__new-price">{!!  theMoney($product->selling_price)  !!}</span>
                             @endif
                         </div>
                         <ul class="product__meta">
@@ -100,24 +92,24 @@
                             <!-- .product__options -->
                             <form class="product__options">
                                 <div class="form-group product__option">
-                                    <label class="product__option-label" for="product-quantity">Quantity</label>
-                                    <div class="product__actions">
-                                        <div class="product__actions-item d-flex justify-content-center">
-                                            <div class="input-number product__quantity">
-                                                <input id="product-quantity"
-                                                       class="input-number__input form-control form-control-lg"
-                                                       type="number" min="1" {{ $product->should_track ? 'max='.$product->stock_count : '' }} value="1">
-                                                <div class="input-number__add"></div>
-                                                <div class="input-number__sub"></div>
-                                            </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <label class="product__option-label mr-2" for="product-quantity">Quantity</label>
+                                        <div class="input-number product__quantity">
+                                            <input id="product-quantity"
+                                                   class="input-number__input form-control form-control-lg"
+                                                   type="number" min="1" {{ $product->should_track ? 'max='.$product->stock_count : '' }} value="1">
+                                            <div class="input-number__add"></div>
+                                            <div class="input-number__sub"></div>
                                         </div>
+                                    </div>
+                                    <div class="product__actions">
                                         @exp($available = !$product->should_track || $product->stock_count > 0)
                                         <div class="product__buttons d-flex flex-wrap">
                                             <div class="product__actions-item product__actions-item--addtocart">
-                                                <button class="btn btn-primary product__addtocart btn-lg btn-block" {{ $available ? '' : 'disabled' }}>Add to cart</button>
+                                                <button class="btn btn-danger product__addtocart btn-lg btn-block" {{ $available ? '' : 'disabled' }}>Add to cart</button>
                                             </div>
                                             <div class="product__actions-item product__actions-item--ordernow">
-                                                <button class="btn btn-primary product__ordernow btn-lg btn-block" {{ $available ? '' : 'disabled' }}>Order Now</button>
+                                                <button class="btn btn-success product__ordernow btn-lg btn-block" {{ $available ? '' : 'disabled' }}>Order Now</button>
                                             </div>
                                         </div>
                                     </div>
@@ -171,26 +163,24 @@
                     </div>
                 </div>
             </div>
-            <div id="accordion" class="mt-3">
-                <div class="card">
-                    <div class="card-header p-0">
-                        <a class="card-link px-4" datatoggle="collapse" href="javascript:void(false)">
-                            Product Description
-                        </a>
-                    </div>
-                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+            <ul class="nav nav-tabs" id="productTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Product Description</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="delivery-tab" data-toggle="tab" href="#delivery" role="tab" aria-controls="delivery" aria-selected="false">Delivery and Payment</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="productTabContent">
+                <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                    <div class="card">
                         <div class="card-body p-4">
                             {!! $product->description !!}
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header p-0">
-                        <a class="card-link px-4" datatoggle="collapse" href="javascript:void(false)">
-                            Delivery and Payment
-                        </a>
-                    </div>
-                    <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+                <div class="tab-pane fade" id="delivery" role="tabpanel" aria-labelledby="delivery-tab">
+                    <div class="card">
                         <div class="card-body p-4">
                             {!! setting('delivery_text') !!}
                         </div>

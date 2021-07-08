@@ -18,6 +18,11 @@
         ::placeholder {
             color: #ccc !important;
         }
+        .page-header {
+            background-color: black;
+            color: white;
+            margin-bottom: 1rem;
+        }
         .page-header__container {
             padding-bottom: 12px;
         }
@@ -78,22 +83,7 @@
             border-radius: 0 !important;
             display: block;
             width: 100%;
-        }
-        .product-card__addtocart,
-        .product__addtocart {
-            background-color: #0083C4 !important;
-            border-color: #0083C4 !important;
-            color: #fff !important;
-        }
-        .product-card__ordernow,
-        .product__ordernow {
-            background-color: #3d464d !important;
-            border-color: #3d464d !important;
-            color: #fff !important;
-        }
-        .btn-primary:hover {
-            background-color: #6c95b5 !important;
-            border-color: #6c95b5 !important;
+            color: #fff;
         }
         .aa-input-container {
             width: 100%;
@@ -172,6 +162,48 @@
         /*.site-header.sticky .site-header__nav-panel,*/
         .site-header.sticky .site-header__topbar {
             display: none;
+        }
+
+
+        /**
+         * Products
+         */
+        .block-header__divider+.block-header__title {
+            margin-left: 16px;
+        }
+        .product-card {
+            overflow: hidden;
+        }
+        .product-card__prices {
+            margin-top: 5px;
+            font-size: 17px;
+            line-height: 1;
+            font-weight: 700;
+            color: #3d464d;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+        }
+        .product-card__buttons {
+            margin-top: 0;
+        }
+        .products-list[data-layout=grid-5-full] .product-card .product-card__badges-list {
+            left: unset;
+            right: -30px;
+            top: -3px;
+        }
+        .product-card__badge {
+            transform: rotate(45deg);
+        }
+        .products-list[data-layout=grid-5-full] .product-card:hover {
+            margin-bottom: 0;
+        }
+        .product-card__badge {
+            padding: 14px 20px 6px;
+        }
+        .products-list[data-layout=grid-5-full] .product-card .product-card__buttons {
+            display: flex;
         }
     </style>
     @stack('styles')
@@ -476,22 +508,22 @@
             orderedProducts();
 
 
-            $(window).on('scroll', function() {
-                $('input, textarea').blur();
-                var scrollTop = $(this).scrollTop()
-                if (scrollTop > 200) {
-                    $('.site-header').addClass('sticky');
-                    $('.site-header__phone').removeClass('d-none');
-                    $('.departments').removeClass('departments--opened departments--fixed');
-                    $('.departments__body').attr('style', '');
-                } else {
-                    $('.site-header').removeClass('sticky');
-                    $('.site-header__phone').addClass('d-none');
-                    if ($('.departments').data('departments-fixed-by') != '')
-                        $('.departments').addClass('departments--opened departments--fixed');
-                    $('.departments--opened.departments--fixed .departments__body').css('min-height', '458px');
-                }
-            });
+            // $(window).on('scroll', function() {
+            //     $('input, textarea').blur();
+            //     var scrollTop = $(this).scrollTop()
+            //     if (scrollTop > 200) {
+            //         $('.site-header').addClass('sticky');
+            //         $('.site-header__phone').removeClass('d-none');
+            //         $('.departments').removeClass('departments--opened departments--fixed');
+            //         $('.departments__body').attr('style', '');
+            //     } else {
+            //         $('.site-header').removeClass('sticky');
+            //         $('.site-header__phone').addClass('d-none');
+            //         if ($('.departments').data('departments-fixed-by') != '')
+            //             $('.departments').addClass('departments--opened departments--fixed');
+            //         $('.departments--opened.departments--fixed .departments__body').css('min-height', '458px');
+            //     }
+            // });
         });
     </script>
     @stack('scripts')
