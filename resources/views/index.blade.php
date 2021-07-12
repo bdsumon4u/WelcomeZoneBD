@@ -32,16 +32,17 @@
 {{--    </div>--}}
 {{--</div><!-- .block-features / end -->--}}
 @foreach($sections as $section)
+    @php($products = $section->products())
 <!-- .block-products-carousel -->
 @includeWhen($section->type == 'carousel-grid', 'partials.products.carousel.grid', [
     'title' => $section->title,
-    'products' => $section->products(),
+    'products' => $products,
     'rows' => optional($section->data)->rows,
     'cols' => optional($section->data)->cols,
 ])
 @includeWhen($section->type == 'pure-grid', 'partials.products.pure-grid', [
     'title' => $section->title,
-    'products' => $section->products(),
+    'products' => $products,
     'rows' => optional($section->data)->rows,
     'cols' => optional($section->data)->cols,
 ])

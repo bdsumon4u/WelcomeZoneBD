@@ -109,7 +109,7 @@
                                                 <button class="btn btn-danger product__addtocart btn-lg btn-block" {{ $available ? '' : 'disabled' }}>Add to cart</button>
                                             </div>
                                             <div class="product__actions-item product__actions-item--ordernow">
-                                                <button class="btn btn-success product__ordernow btn-lg btn-block" {{ $available ? '' : 'disabled' }}>Order Now</button>
+                                                <button class="btn btn-primary product__ordernow btn-lg btn-block" {{ $available ? '' : 'disabled' }}>Order Now</button>
                                             </div>
                                         </div>
                                     </div>
