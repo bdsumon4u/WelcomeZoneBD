@@ -44,7 +44,7 @@ class HomeSection extends Model
         $cols = $this->data->cols ?? 5;
         $query = Product::whereIsActive(1)
             ->whereHas('categories', function ($query) {
-                $query->whereIn('categories.id', $this->categories->pluck('id')->toArray());
+                $query->whereIn('categories.id', $this->categories()->get()->pluck('id')->toArray());
             })
             // ->inRandomOrder()
             ->when($limited, function ($query) use ($rows, $cols) {
