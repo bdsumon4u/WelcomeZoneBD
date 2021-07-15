@@ -124,6 +124,13 @@
             background-color: #f7f8f9;
             z-index: 9999 !important;
         }
+        .mobilemenu__close {
+            height: 40px;
+            width: 40px;
+            margin-right: -20px;
+            border-radius: 50%;
+            background: black;
+        }
         .aa-input-container input {
             font-size: 15px;
 
@@ -138,13 +145,10 @@
             .header-fixed .site__header {
                 position: fixed;
                 width: 100%;
-                z-index: 9999;
+                z-index: 111;
             }
             .header-fixed .site__body {
                 padding-top: 85px;
-            }
-            .header-fixed .mobilemenu__body {
-                top: 85px;
             }
         }
 
