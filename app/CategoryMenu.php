@@ -42,7 +42,7 @@ class CategoryMenu extends Model
     {
         $query = self::whereNull('parent_id')
             ->with(['childrens' => function ($category) {
-                $category->with('childrens');
+                $category->with('childrens')->orderBy('order');
             }])
             ->orderBy('order');
         $count && $query->take($count);
@@ -56,7 +56,7 @@ class CategoryMenu extends Model
     {
         $query = self::whereNull('parent_id')
             ->with(['childrens' => function ($category) {
-                $category->with('parent', 'childrens');
+                $category->with('parent', 'childrens')->orderBy('order');
             }])
             ->orderBy('order');
         $count && $query->take($count);

