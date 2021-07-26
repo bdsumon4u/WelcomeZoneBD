@@ -14,11 +14,7 @@
         margin-bottom: 10px;
     }
     .form-control {
-        border: 2px solid #1783c4;
-    }
-    .btn-primary {
-        border-color: #178acf;
-        background-color: #178acf;
+        border: 2px solid #28a745;
     }
     .input-number .form-control:focus {
         box-shadow: none;
@@ -149,7 +145,7 @@
                                             <label class="form-check-label" for="checkout-terms">I agree to the <span class="text-info" target="_blank" href="javascript:void(0);">terms and conditions</span>*</label>
                                         </div>
                                     </div>
-                                    <button type="submit" place-order class="btn btn-primary btn-xl btn-block text-white">Confirm Order</button>
+                                    <button type="submit" place-order class="btn btn-success btn-xl btn-block text-white">Confirm Order</button>
                                 </div>
                             </div>
                         </div>
