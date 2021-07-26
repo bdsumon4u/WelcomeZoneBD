@@ -514,22 +514,22 @@
             orderedProducts();
 
 
-            // $(window).on('scroll', function() {
-            //     $('input, textarea').blur();
-            //     var scrollTop = $(this).scrollTop()
-            //     if (scrollTop > 200) {
-            //         $('.site-header').addClass('sticky');
-            //         $('.site-header__phone').removeClass('d-none');
-            //         $('.departments').removeClass('departments--opened departments--fixed');
-            //         $('.departments__body').attr('style', '');
-            //     } else {
-            //         $('.site-header').removeClass('sticky');
-            //         $('.site-header__phone').addClass('d-none');
-            //         if ($('.departments').data('departments-fixed-by') != '')
-            //             $('.departments').addClass('departments--opened departments--fixed');
-            //         $('.departments--opened.departments--fixed .departments__body').css('min-height', '458px');
-            //     }
-            // });
+            $(window).on('scroll', function() {
+                $('input, textarea').blur();
+                var scrollTop = $(this).scrollTop()
+                if (scrollTop > 200) {
+                    $('.site-header').addClass('sticky');
+                    $('.site-header__phone').removeClass('d-none');
+                    $('.departments').removeClass('departments--opened departments--fixed');
+                    $('.departments__body').attr('style', '');
+                } else {
+                    $('.site-header').removeClass('sticky');
+                    $('.site-header__phone').addClass('d-none');
+                    if ($('.departments').data('departments-fixed-by') != '')
+                        $('.departments').addClass('departments--opened departments--fixed');
+                    $('.departments--opened.departments--fixed .departments__body').css('min-height', '458px');
+                }
+            });
         });
     </script>
     @stack('scripts')
