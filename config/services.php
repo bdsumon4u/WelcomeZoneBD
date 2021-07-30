@@ -44,8 +44,8 @@ return [
 
     'logo' => [
         'desktop' => [
-            'width' => 260,
-            'height' => 54
+            'width' => 150,
+            'height' => 40
         ],
         'mobile' => [
             'width' => 150,
