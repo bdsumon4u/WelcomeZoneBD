@@ -24,6 +24,7 @@ class Category extends Model
             cache()->forget('homesections');
             cache()->forget('catmenu:nested');
             cache()->forget('catmenu:nestedwithparent');
+            $menu->categoryMenu()->delete();
         });
     }
 
