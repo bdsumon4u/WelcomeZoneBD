@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductRequest extends FormRequest
 {
@@ -47,7 +48,7 @@ class ProductRequest extends FormRequest
 
         if (! $this->isMethod('POST')) {
             $rules['slug'] = 'required|max:255|unique:products,id,'.$this->route('product')->id;
-            $rules['sku'] = 'required|unique:products,id,'.$this->route('product')->id;
+            $rules['sku'] = Rule::unique('products', 'sku')->ignore($this->route('product')->id);
         }
 
         return $rules;
