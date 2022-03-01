@@ -18,6 +18,9 @@
         ::placeholder {
             color: #ccc !important;
         }
+        .mobile-links__item-title {
+            font-family: 'Merriweather Sans', sans-serif;
+        }
         .page-header {
             background-color: black;
             color: white;
