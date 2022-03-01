@@ -49,8 +49,17 @@
                 height: auto;
             }
         }
+        .product-card {
+            transition: all 0.3s;
+        }
         .product-card:before {
-            box-shadow: inset 0 0 0 2px #1783c4;
+            box-shadow: inset 0 0 0 2px #f3f3f3;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+        .product-card:hover:before {
+            box-shadow: inset 0 0 0 2px #f3f3f3;
         }
         .product-card:before,
         .owl-carousel {
