@@ -24,13 +24,17 @@
             }
         }
         .product__content {
-            grid-template-columns: [gallery] calc(40% - 30px) [info] calc(40% - 35px) [sidebar] calc(25% - 10px);
+            grid-template-columns: [gallery] calc(40% - 30px) [info] calc(10% - 35px) [sidebar] calc(55% - 10px);
             grid-column-gap: 10px;
         }
 
         img {
             max-width: 100%;
             height: auto;
+        }
+        .product__ordernow {
+            fill: white;
+            color: white;
         }
     </style>
 @endpush
@@ -62,6 +66,7 @@
                             @endforeach
                         </div>
                     </div>
+                    <div></div>
                     <!-- .product__info -->
                     <div class="product__info">
                         <h1 class="product__name">{{ $product->name }}</h1>
@@ -139,28 +144,6 @@
                             </div>
                         </div>
                     </div><!-- .product__info / end -->
-                    <div>
-                        <div class="block-features__list flex-column d-block">
-                            @if($services = setting('services'))
-                                @foreach(config('services.services', []) as $num => $icon)
-                                    <div class="block-features__item">
-                                        <div class="block-features__icon">
-                                            <svg width="48px" height="48px">
-                                                <use xlink:href="{{ asset($icon) }}"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="block-features__content">
-                                            <div class="block-features__title">{{ $services->$num->title }}</div>
-                                            <div class="block-features__subtitle">{{ $services->$num->detail }}</div>
-                                        </div>
-                                    </div>
-                                    @if(!$loop->last)
-                                        <div class="block-features__divider"></div>
-                                    @endif
-                                @endforeach
-                            @endif
-                        </div>
-                    </div>
                 </div>
             </div>
             <ul class="nav nav-tabs" id="productTab" role="tablist">
