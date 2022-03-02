@@ -11,7 +11,7 @@
                         </svg>
                     </button>
                     <a class="mobile-header__logo" href="{{ url('/') }}">
-                        <img src="{{ asset($logo->mobile ?? '') }}" width="{{ config('services.logo.mobile.width', 192) }}" height="{{ config('services.logo.mobile.height', 40) }}" alt="Logo" style="max-width: 100%;">
+                        <img src="{{ asset($logo->mobile ?? '') }}" width="{{ config('services.logo.mobile.width', 192) }}" height="{{ config('services.logo.mobile.height', 40) }}" alt="Logo" style="max-width: 100%; height: auto;">
                     </a>
                     <div class="mobile-header__search">
                         <div class="search mobile-header__search-form">
@@ -55,7 +55,7 @@
                                 <!-- .dropcart -->
                                 <div class="dropcart">
                                     <div class="dropcart__products-list">
-                                        
+
                                     </div>
                                     <div class="dropcart__totals">
                                         <table>
