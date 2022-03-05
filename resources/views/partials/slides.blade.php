@@ -1,5 +1,31 @@
 @push('styles')
 <style>
+    .owl-stage-outer {
+        border-radius: 8px;
+    }
+    .owl-nav {
+        position: absolute;
+        height: 100%;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 40px;
+        top: 0;
+    }
+    .block-slideshow__body .owl-carousel .owl-nav button {
+        height: 60px;
+        color: white;
+        background: rgba(0, 0, 0, 0.1);
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+    .block-slideshow__body .owl-carousel .owl-nav:hover button {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    .block-slideshow__body .owl-carousel .owl-nav button:focus {
+        outline: none;
+    }
     @media (max-width: 749px) {
         .block-slideshow {
             margin-bottom: 40px;
@@ -13,11 +39,14 @@
             margin-right: -5px;
         }
         #slideshow-container > div > div {
-            padding-left: 5px;
-            padding-right: 5px;
+            padding-left: 8px;
+            padding-right: 8px;
         }
         .block-slideshow__body {
-            margin-top: 5px !important;
+            margin-top: 8px !important;
+        }
+        .owl-nav {
+            display: none;
         }
     }
     @media (max-width: 767px) {
