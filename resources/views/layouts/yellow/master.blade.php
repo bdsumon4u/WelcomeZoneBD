@@ -137,9 +137,11 @@
             z-index: 9999 !important;
         }
         .mobilemenu__close {
-            height: 40px;
-            width: 40px;
-            margin-right: -20px;
+            height: 34px;
+            width: 34px;
+            fill: #fff;
+            padding: 0px 1px 2px 0px;
+            margin-right: -16px;
             border-radius: 50%;
             background: black;
         }
@@ -251,9 +253,7 @@
             <div class="mobilemenu__header">
                 <div class="mobilemenu__title">Menu</div>
                 <button type="button" class="mobilemenu__close">
-                    <svg width="20px" height="20px">
-                        <use xlink:href="{{ asset('strokya/images/sprite.svg#cross-20') }}"></use>
-                    </svg>
+                    <svg width="30" height="30" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" class="close-icon"><g fill="none" fill-rule="evenodd"><g transform="translate(-168 -859)" fill-rule="nonzero"><g id="Group-12-Copy" transform="translate(168 859)"><g id="Group-16"><rect id="Rectangle-14" fill="transparent" width="24" height="24"></rect><g id="Group-36" transform="rotate(45 1.257 16.243)" stroke="#ffffff" stroke-linecap="square" stroke-width="2"><path d="M5.5,0.5 L5.5,11.5" id="Line-6"></path><path d="M11,6 L0,6" id="Line-7"></path></g></g></g></g></g></svg>
                 </button>
             </div>
             <div class="mobilemenu__content">
