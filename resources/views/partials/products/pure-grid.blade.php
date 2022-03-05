@@ -24,14 +24,14 @@
                     <div class="products-list__item">
                         <div class="product-card" data-id="{{ $product->id }}" data-max="{{ $product->should_track ? $product->stock_count : -1 }}">
                             @exp($in_stock = !$product->should_track || $product->stock_count > 0)
-                            <div class="product-card__badges-list">
-                                @if(! $in_stock)
-                                    <div class="product-card__badge product-card__badge--sale">Sold</div>
-                                @endif
-                                @if($product->price != $product->selling_price)
-                                    <div class="product-card__badge product-card__badge--sale">-{{ round(($product->price - $product->selling_price) * 100 / $product->price, 0, PHP_ROUND_HALF_UP) }}%</div>
-                                @endif
-                            </div>
+{{--                            <div class="product-card__badges-list">--}}
+{{--                                @if(! $in_stock)--}}
+{{--                                    <div class="product-card__badge product-card__badge--sale">Sold</div>--}}
+{{--                                @endif--}}
+{{--                                @if($product->price != $product->selling_price)--}}
+{{--                                    <div class="product-card__badge product-card__badge--sale">-{{ round(($product->price - $product->selling_price) * 100 / $product->price, 0, PHP_ROUND_HALF_UP) }}%</div>--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
                             <div class="product-card__image">
                                 <a href="{{ route('products.show', $product) }}">
                                     <img src="{{ $product->base_image->src }}" alt="Base Image">
