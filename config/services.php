@@ -66,4 +66,5 @@ return [
         'desktop' => [840, 395],
     ],
 
+    'tidio' => env('TIDIO_KEY'),
 ];

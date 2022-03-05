@@ -10,3 +10,4 @@
 <script src="{{ asset('strokya/vendor/jquery.bootstrap-growl.min.js') }}"></script>
 <script src="{{ asset('strokya/vendor/svg4everybody-2.1.9/svg4everybody.min.js') }}"></script>
 <script>svg4everybody();</script>
+<script src="//code.tidio.co/{{ config('services.tidio') }}.js" async></script>
