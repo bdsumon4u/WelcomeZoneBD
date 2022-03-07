@@ -120,9 +120,13 @@
                                     </div>
                                 </div>
                                 <div class="call-for-order">
-                                    <img src="{{ asset('call-now-icon-20.jpg') }}" width="135" alt="Call For Order">
-                                    <div style="padding: 10px;margin-bottom: 10px;font-weight: bold;color: red;">
-                                        {!! implode('<br>', explode(' ', setting('call_for_order'))) !!}
+                                    <img src="{{ asset('call-now-icon-20.jpg') }}" width="160" alt="Call For Order">
+                                    <div style="padding: 5px 10px;font-weight: bold; margin-bottom: 10px;">
+                                        @foreach(explode(' ', setting('call_for_order') ?? '') as $phone)
+                                            <a href="tel:{{$phone}}" style="color: red; display: flex; align-items: center; column-gap: 5px;">
+                                                <img style="width:30px" class="img-responsive " src="{{ asset('call-now.gif') }}" alt="Call" title="Call For Order"> {{ $phone }}
+                                            </a>
+                                        @endforeach
                                     </div>
                                 </div>
                             </form><!-- .product__options / end -->
