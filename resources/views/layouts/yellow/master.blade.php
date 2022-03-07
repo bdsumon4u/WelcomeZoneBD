@@ -18,6 +18,9 @@
         ::placeholder {
             color: #ccc !important;
         }
+        .search-btn:focus {
+            outline: none;
+        }
         .mobile-links__item-title {
             font-family: 'Merriweather Sans', sans-serif;
         }

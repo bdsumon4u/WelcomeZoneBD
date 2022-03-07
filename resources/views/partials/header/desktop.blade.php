@@ -22,28 +22,32 @@
     letter-spacing: 0.025em;
     font-weight: 500;
     font-size: 0.875rem;
-    height: 40px;
+    height: 44px;
     display: flex;
     flex: 1 1 0%;
     padding: 0px 17px;
-    border: 2px solid #28a745;
-    border-radius: 4px 0px 0px 4px;
+    border: 3px solid #28a745;
+    border-radius: 7px 0px 0px 7px;
     outline: none;
+    border-right-width: 1px;
     width: 100%;
 ">
-                                    <button type="submit" style="border: none; padding: 0;">
+                                    <button class="search-btn" type="submit" style="border: none; padding: 0; background: transparent">
                                         <figure color="black" class="Searchbar__Button-xnx3kr-3 duKdNo" style="
                                         cursor: pointer;
-                                        display: flex;
-                                        -webkit-box-align: center;
-                                        align-items: center;
-                                        padding-right: 29px;
-                                        padding-left: 29px;
-                                        background: #28a745;
-                                        color: rgb(255, 255, 255);
-                                        height: 40px;
-                                        min-height: 100%;
-                                        margin: 0;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: #6dc54a;
+    color: rgb(255, 255, 255);
+    height: 40px;
+    min-height: 100%;
+    margin: 0;
+    border-radius: 0 7px 7px 0;
+    border: 3px solid #53a846;
+    border-left-width: 2px;
                                     "><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" _css2="
                                             @media (max-width: ,768px,) {
                                               ,
