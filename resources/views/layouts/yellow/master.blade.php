@@ -102,6 +102,9 @@
         }
         .aa-input-container {
             width: 100%;
+            height: 100%;
+            border: 3px solid #53a846;
+            border-radius: 7px;
         }
         .algolia-autocomplete {
             width: 100%;
@@ -114,9 +117,8 @@
             padding: 0 8px;
         }
         .mobile-header__search.mobile-header__search--opened {
-            height: 100%;
+            height: 48px;
             display: flex;
-            align-items: center;
         }
         .mobile-header__search-form {
             width: 100%;
@@ -127,9 +129,14 @@
         .mobile-header__search-form .aa-input-search {
             box-shadow: none;
         }
+        .mobile-header__search-button {
+            background: #64c036;
+            color: white;
+            fill: white;
+        }
         .mobile-header__search-form .aa-hint,
         .mobile-header__search-form .aa-input {
-            height: 54px;
+            height: 42px;
             padding-right: 32px;
         }
         .mobile-header__search-form .aa-input-icon {
