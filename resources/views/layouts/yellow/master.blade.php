@@ -178,6 +178,11 @@
 
 
 
+        .site__header.d-lg-block.d-none {
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
         /** StickyNav **/
         .site-header.sticky {
             position: fixed;
@@ -185,11 +190,15 @@
             min-width: 100%;
         }
         .site-header.sticky .site-header__middle {
-            height: 65px;
+            height: 80px;
         }
         /*.site-header.sticky .site-header__nav-panel,*/
         .site-header.sticky .site-header__topbar {
             display: none;
+        }
+        .site__body.sticky {
+            position: sticky;
+            top: 134px;
         }
 
 
@@ -539,17 +548,21 @@
             $(window).on('scroll', function() {
                 $('input, textarea').blur();
                 var scrollTop = $(this).scrollTop()
-                if (scrollTop > 200) {
-                    $('.site-header').addClass('sticky');
-                    $('.site-header__phone').removeClass('d-none');
+                if (scrollTop > 400) {
+                    // $('.site__body').addClass('sticky');
+                    // $('.site-header').addClass('sticky');
+                    // $('.site-header__phone').removeClass('d-none');
                     $('.departments').removeClass('departments--opened departments--fixed');
                     $('.departments__body').attr('style', '');
+                    // $('.block-slideshow__body').parent().addClass('col').removeClass('col-12 col-lg-9 offset-lg-3');
                 } else {
-                    $('.site-header').removeClass('sticky');
-                    $('.site-header__phone').addClass('d-none');
+                    // $('.site__body').removeClass('sticky');
+                    // $('.site-header').removeClass('sticky');
+                    // $('.site-header__phone').addClass('d-none');
                     if ($('.departments').data('departments-fixed-by') != '')
                         $('.departments').addClass('departments--opened departments--fixed');
                     $('.departments--opened.departments--fixed .departments__body').css('min-height', '458px');
+                    // $('.block-slideshow__body').parent().addClass('col-12 col-lg-9 offset-lg-3').removeClass('col');
                 }
             });
         });

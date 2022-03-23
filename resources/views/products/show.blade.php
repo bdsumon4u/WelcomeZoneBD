@@ -120,7 +120,7 @@
                                     </div>
                                 </div>
                                 <div class="call-for-order">
-                                    <img src="{{ asset('call-now-icon-20.jpg') }}" width="160" alt="Call For Order">
+                                    ফোনে অর্ডার করতে কল করুন-
                                     <div style="padding: 5px 10px;font-weight: bold; margin-bottom: 10px;">
                                         @foreach(explode(' ', setting('call_for_order') ?? '') as $phone)
                                             <a href="tel:{{$phone}}" style="color: red; display: flex; align-items: center; column-gap: 2px;">
