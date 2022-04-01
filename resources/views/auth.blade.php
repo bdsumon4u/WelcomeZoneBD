@@ -48,7 +48,7 @@
                                     <label class="form-check-label" for="remember">Remember Me</label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-4">Login</button>
+                            <button type="submit" class="btn btn-primary text-white mt-4">Login</button>
                         </x-form>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                                     <x-error field="password_confirmation" />
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-4">Register</button>
+                            <button type="submit" class="btn btn-primary text-white mt-4">Register</button>
                         </x-form>
                     </div>
                 </div>

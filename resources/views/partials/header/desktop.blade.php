@@ -109,7 +109,7 @@
                                             </table>
                                         </div>
                                         <div class="dropcart__buttons">
-                                            <a class="btn btn-primary" href="{{ route('checkout') }}">Checkout</a>
+                                            <a class="btn btn-primary text-white" href="{{ route('checkout') }}">Checkout</a>
                                         </div>
                                     </div><!-- .dropcart / end -->
                                 </div>
