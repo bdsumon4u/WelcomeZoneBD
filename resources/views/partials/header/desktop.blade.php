@@ -108,7 +108,7 @@
                                                 </tr>
                                             </table>
                                         </div>
-                                        <div class="dropcart__buttons">
+                                        <div class="dropcart__buttons py-2">
                                             <a class="btn btn-primary text-white" href="{{ route('checkout') }}">Checkout</a>
                                         </div>
                                     </div><!-- .dropcart / end -->
