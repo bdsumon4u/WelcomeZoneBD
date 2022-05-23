@@ -34,6 +34,7 @@ class Product extends Model
          * @var array
          */
         'columns' => [
+            'products.sku' => 20,
             'products.name' => 10,
             'products.description' => 5,
         ],
